@@ -24,13 +24,13 @@ namespace ProgrammingAssignment1
             float point2Y = 0;
             float deltaX = 0;
             float deltaY = 0;
-            double distance = 0;
+            float distance = 0;
             double angle = 0;
 
             //Print this message to the screen and then get the users points
             Console.WriteLine("Welcome this application will calculate the distance between two points and the angle between those points");
             Console.WriteLine("Enter your point at x1 : ");
-            point1Y = float.Parse(Console.ReadLine());
+            point1X = float.Parse(Console.ReadLine());
             Console.WriteLine("Enter your point at y1 : ");
             point1Y = float.Parse(Console.ReadLine());
             Console.WriteLine("Enter your point at x2 : ");
@@ -39,14 +39,14 @@ namespace ProgrammingAssignment1
             point2Y = float.Parse(Console.ReadLine());
 
             //Calculate the distance between the points at the X- axis and also the Y-axis
-            deltaX = point1X - point2X;
-            deltaY = point1Y - point2Y;
+            deltaX = point2X - point1X;
+            deltaY = point2Y - point1Y;
 
             //Calculate the longest side
-            distance = (double)(Math.Sqrt(deltaX * deltaX + deltaY * deltaY));
+            distance = (float)(Math.Sqrt(deltaX * deltaX + deltaY * deltaY));
 
             //Calculate the angle and then convert it to degrees
-            angle = Math.Atan2(point1Y - point2Y, point1X - point2X);
+            angle = Math.Atan2(deltaY, deltaX);
             angle = angle * (180/Math.PI);
 
             //Print to the screen the distance and the angle
